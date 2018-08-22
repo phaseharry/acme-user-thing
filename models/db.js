@@ -13,7 +13,14 @@ const Thing = connection.define('thing', {
   },
 });
 
-const UserThing = connection.define('userthing', {});
+const UserThing = connection.define('userthing', {
+  userId: {
+    type: Sequelize.INTEGER,
+  },
+  thingId: {
+    type: Sequelize.INTEGER,
+  },
+});
 
 UserThing.belongsTo(User);
 User.hasMany(UserThing);
